@@ -19,7 +19,10 @@ class ChatTest < Minitest::Test
     chat = Chat.new
     assert_output("I AM HAVING A HARD TIME HEARING YOU.\n") {chat.get_response('hello')}
   end
-
+  def test_mixed_case_hard_to_hear
+    chat = Chat.new
+    assert_output("I AM HAVING A HARD TIME HEARING YOU.\n") {chat.get_response('Hello')}
+  end
   def test_upper_case_not_pet_store
     chat = Chat.new
     assert_output("NO, THIS IS NOT A PET STORE\n") {chat.get_response('HELLO')}
