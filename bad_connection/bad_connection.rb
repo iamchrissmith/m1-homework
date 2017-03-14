@@ -11,8 +11,6 @@ class Chat
   def get_response(message='')
     if message.empty?
       puts "HELLO?!"
-    elsif message.upcase != message
-      puts "I AM HAVING A HARD TIME HEARING YOU."
     elsif message == "GOODBYE!" && !@first_goodbye
       puts "ANYTHING ELSE I CAN HELP WITH?"
       @first_goodbye = true
@@ -21,6 +19,8 @@ class Chat
       @ready_to_quit = true
     elsif message.upcase == message
       puts "NO, THIS IS NOT A PET STORE"
+    else
+      puts "I AM HAVING A HARD TIME HEARING YOU."
     end
   end
 
@@ -32,6 +32,6 @@ class Chat
     end
   end
 end
-
-chat = Chat.new
-chat.start
+#
+# chat = Chat.new
+# chat.start
